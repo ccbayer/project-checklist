@@ -1,0 +1,23 @@
+{
+  "name": "project-checklist",
+  "version": "1.0.0",
+  "description": "A project checklist",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccbayer/project-checklist.git"
+  },
+  "author": "Patrick / Colin / Darrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccbayer/project-checklist/issues"
+  },
+  "homepage": "https://github.com/ccbayer/project-checklist#readme"
+}
