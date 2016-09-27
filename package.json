@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ccbayer/project-checklist/issues"
   },
-  "homepage": "https://github.com/ccbayer/project-checklist#readme"
+  "homepage": "https://github.com/ccbayer/project-checklist#readme",
+  "scripts": {
+    "server-local": "NODE_ENV=\"development\" node server.js"
+  }
 }
