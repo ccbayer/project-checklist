@@ -4,6 +4,7 @@
   "description": "A project checklist",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "express-session": "^1.14.1",

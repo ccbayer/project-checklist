@@ -1,9 +1,12 @@
+require('dotenv').config()
+
 var express = require('express');
 var session = require('express-session');
 var app = express();
+
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var googleCallbackURL = 'https://epsilon-project-checklist.herokuapp.com/auth/google/callback'
+var googleCallbackURL = 'https://epsilon-project-checklist.herokuapp.com/auth/google/callback';
 if (process.env.NODE_ENV === 'development') {
   googleCallbackURL = "http://localhost:5000/auth/google/callback";
 }
@@ -34,7 +37,7 @@ passport.deserializeUser(function(obj, done) {
 
 passport.use(new GoogleStrategy({
     clientID: "243948653223-ogu029nca575dp4k4rvbagficd09lu8k.apps.googleusercontent.com",
-    clientSecret: "6eQWjsnnTRGPh_FZLRQ8ukCd",
+    clientSecret: process.env.clientSecret,
     callbackURL: googleCallbackURL
   },
   function(accessToken, refreshToken, profile, done) {
