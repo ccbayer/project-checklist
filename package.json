@@ -9,9 +9,11 @@
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "express-session": "^1.14.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server-local": "NODE_ENV=\"development\" node --inspect server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/ccbayer/project-checklist/issues"
   },
-  "homepage": "https://github.com/ccbayer/project-checklist#readme",
-  "scripts": {
-    "server-local": "NODE_ENV=\"development\" node server.js"
-  }
+  "homepage": "https://github.com/ccbayer/project-checklist#readme"
 }
