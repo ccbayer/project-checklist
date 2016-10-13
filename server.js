@@ -9,13 +9,39 @@ require('dotenv').config()
 // *******
 // web server
 var express = require('express');
+var redis = require('redis');
+
 var session = require('express-session');
+// for storing session data
+var RedisStore = require('connect-redis')(session);
+var client, store;
+
+if (process.env.NODE_ENV === 'development') {
+  // local
+  client = redis.createClient();
+  store = new RedisStore({
+    host: '127.0.0.1',
+    port: 6379,
+    client: client,
+    ttl :  260}
+  );
+} else {
+  // heroku
+  client = redis.createClient(process.env.REDIS_URL);
+  store = new RedisStore({
+    client: client,
+    url: process.env.REDIS_URL,
+    ttl :  260}
+  );
+}
+
 var app = express();
 
 // server session for saving user authentication - for now.
 // this will need to be dealt with later via cookies and/or mongo
 app.use(session( {
   secret: 'project-checklist',
+  store: store,
   resave: true,
   saveUninitialized: true
 }));
